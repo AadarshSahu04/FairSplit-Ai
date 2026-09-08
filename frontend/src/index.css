@@ -1,0 +1,3 @@
+/* FairSplit AI — Entry stylesheet. Imports tokens + global styles. */
+@import './styles/tokens.css';
+@import './styles/global.css';

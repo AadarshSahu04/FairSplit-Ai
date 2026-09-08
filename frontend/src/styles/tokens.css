@@ -1,0 +1,130 @@
+/* ============================================================
+   FairSplit AI — Design Tokens
+   All visual constants live here. Never hard-code values elsewhere.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* ── Brand Palette ─────────────────────────────────────────── */
+  --brand-hue: 25;                          /* warm saffron-orange */
+  --brand-50:  hsl(var(--brand-hue), 100%, 97%);
+  --brand-100: hsl(var(--brand-hue), 100%, 92%);
+  --brand-200: hsl(var(--brand-hue), 95%,  83%);
+  --brand-300: hsl(var(--brand-hue), 92%,  72%);
+  --brand-400: hsl(var(--brand-hue), 90%,  60%);
+  --brand-500: hsl(var(--brand-hue), 88%,  50%);  /* primary accent */
+  --brand-600: hsl(var(--brand-hue), 85%,  42%);
+  --brand-700: hsl(var(--brand-hue), 80%,  34%);
+  --brand-800: hsl(var(--brand-hue), 75%,  26%);
+  --brand-900: hsl(var(--brand-hue), 70%,  18%);
+
+  /* ── Neutral Palette (dark-first) ──────────────────────────── */
+  --neutral-0:   #ffffff;
+  --neutral-50:  #fafafa;
+  --neutral-100: #f4f4f5;
+  --neutral-150: #ededef;
+  --neutral-200: #e4e4e7;
+  --neutral-300: #d1d1d6;
+  --neutral-400: #a1a1aa;
+  --neutral-500: #71717a;
+  --neutral-600: #52525b;
+  --neutral-700: #3f3f46;
+  --neutral-800: #27272a;
+  --neutral-850: #1c1c1f;
+  --neutral-900: #18181b;
+  --neutral-950: #0f0f11;
+
+  /* ── Semantic Color Tokens ──────────────────────────────────── */
+  --color-bg:            var(--neutral-950);
+  --color-bg-elevated:   var(--neutral-900);
+  --color-bg-card:       var(--neutral-850);
+  --color-bg-input:      var(--neutral-800);
+  --color-border:        var(--neutral-700);
+  --color-border-subtle: var(--neutral-800);
+  --color-text:          var(--neutral-200);
+  --color-text-muted:    var(--neutral-400);
+  --color-text-faint:    var(--neutral-600);
+  --color-text-dim:      var(--neutral-600);
+  --color-text-heading:  var(--neutral-0);
+  --color-accent:        var(--brand-500);
+  --color-accent-glow:   hsla(var(--brand-hue), 88%, 50%, 0.25);
+  --color-accent-hover:  var(--brand-400);
+  --color-accent-bg:     hsla(var(--brand-hue), 88%, 50%, 0.1);
+  --color-accent-border: hsla(var(--brand-hue), 88%, 50%, 0.35);
+
+  /* ── Status Colors ──────────────────────────────────────────── */
+  --color-success:     hsl(145, 65%, 48%);
+  --color-success-bg:  hsla(145, 65%, 48%, 0.1);
+  --color-warning:     hsl(38, 95%, 54%);
+  --color-warning-bg:  hsla(38, 95%, 54%, 0.1);
+  --color-error:       hsl(0, 75%, 58%);
+  --color-error-bg:    hsla(0, 75%, 58%, 0.1);
+  --color-info:        hsl(210, 80%, 58%);
+  --color-info-bg:     hsla(210, 80%, 58%, 0.1);
+
+  /* ── Typography ─────────────────────────────────────────────── */
+  --font-sans:    'Inter',  system-ui, sans-serif;
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg:   1.125rem;   /* 18px */
+  --text-xl:   1.25rem;    /* 20px */
+  --text-2xl:  1.5rem;     /* 24px */
+  --text-3xl:  1.875rem;   /* 30px */
+  --text-4xl:  2.25rem;    /* 36px */
+  --text-5xl:  3rem;       /* 48px */
+
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-extrabold: 800;
+
+  --leading-tight:  1.25;
+  --leading-snug:   1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  /* ── Spacing (8-pt grid) ────────────────────────────────────── */
+  --space-1:  0.25rem;   /* 4px */
+  --space-2:  0.5rem;    /* 8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+
+  /* ── Border Radius ──────────────────────────────────────────── */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ────────────────────────────────────────────────── */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.25);
+  --shadow-lg:  0 10px 30px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3);
+  --shadow-xl:  0 20px 60px rgba(0,0,0,0.6), 0 8px 24px rgba(0,0,0,0.35);
+  --shadow-glow: 0 0 24px var(--color-accent-glow), 0 0 48px var(--color-accent-glow);
+
+  /* ── Transitions ─────────────────────────────────────────────── */
+  --transition-fast:   150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* ── Layout ──────────────────────────────────────────────────── */
+  --max-width:       840px;
+  --sidebar-width:   280px;
+  --header-height:   64px;
+}

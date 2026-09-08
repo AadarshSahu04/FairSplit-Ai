@@ -1,0 +1,273 @@
+/* ── BillReview — Phase 10 full styles ─────────────────────────────────────── */
+
+.bill-review {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-5);
+}
+
+/* ── Warnings banner ── */
+.bill-review__warnings {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-2);
+}
+.bill-review__warning-item {
+  font-size:     var(--text-sm);
+  color:         var(--color-warning);
+  padding:       var(--space-2) var(--space-3);
+  background:    var(--color-warning-bg);
+  border-radius: var(--radius-sm);
+  border-left:   3px solid var(--color-warning);
+  line-height:   1.4;
+}
+
+/* ── Stats bar ── */
+.bill-review__stats-bar {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-4);
+  flex-wrap:   wrap;
+}
+.bill-review__stat {
+  font-size: var(--text-sm);
+  color:     var(--color-text-muted);
+}
+.bill-review__stat--warn {
+  color: var(--color-warning);
+  font-weight: var(--weight-semibold);
+}
+.bill-review__stat--hint {
+  margin-left:  auto;
+  font-style:   italic;
+  font-size:    var(--text-xs);
+  color:        var(--color-text-dim);
+}
+
+/* ── Item list ── */
+.bill-review__items {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-2);
+}
+
+.bill-review__item-card {
+  padding: var(--space-3) var(--space-4) !important;
+  border:  1px solid var(--color-border-subtle) !important;
+  transition: border-color 0.2s;
+}
+.bill-review__item-card--flagged {
+  border-color: var(--color-warning) !important;
+  background:   var(--color-warning-bg) !important;
+}
+
+/* Item header row */
+.bill-review__item-header {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.bill-review__item-name-wrap {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-2);
+  flex:        1;
+  min-width:   0;
+}
+
+.bill-review__item-name-input {
+  flex:          1;
+  min-width:     0;
+  font-size:     var(--text-sm);
+  font-weight:   var(--weight-medium);
+  color:         var(--color-text-heading);
+  background:    transparent;
+  border:        none;
+  border-bottom: 1px solid transparent;
+  padding:       2px 4px;
+  outline:       none;
+  width:         100%;
+  transition:    border-color 0.15s;
+}
+.bill-review__item-name-input:focus {
+  border-bottom-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 5%, transparent);
+  border-radius: 2px 2px 0 0;
+}
+
+.bill-review__remove-btn {
+  background:    none;
+  border:        none;
+  color:         var(--color-text-dim);
+  font-size:     1.2rem;
+  line-height:   1;
+  padding:       2px 6px;
+  cursor:        pointer;
+  border-radius: var(--radius-sm);
+  transition:    color 0.15s, background 0.15s;
+  flex-shrink:   0;
+}
+.bill-review__remove-btn:hover {
+  color:      var(--color-error);
+  background: color-mix(in srgb, var(--color-error) 10%, transparent);
+}
+
+/* Item numeric fields row */
+.bill-review__item-fields {
+  display:   grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:       var(--space-2);
+}
+
+/* ── Shared field styles ── */
+.bill-review__field {
+  display:        flex;
+  flex-direction: column;
+  gap:            2px;
+}
+.bill-review__field-label {
+  font-size:   var(--text-xs);
+  color:       var(--color-text-muted);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.02em;
+}
+.bill-review__field-input-wrap {
+  display:     flex;
+  align-items: center;
+  background:  var(--color-bg-input);
+  border:      1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  overflow:    hidden;
+  transition:  border-color 0.15s;
+}
+.bill-review__field-input-wrap:focus-within {
+  border-color: var(--color-accent);
+  box-shadow:   0 0 0 2px color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+.bill-review__field-prefix {
+  padding:     0 var(--space-2);
+  font-size:   var(--text-xs);
+  color:       var(--color-text-muted);
+  user-select: none;
+  white-space: nowrap;
+}
+.bill-review__field-input {
+  flex:         1;
+  min-width:    0;
+  border:       none;
+  background:   transparent;
+  color:        var(--color-text);
+  font-size:    var(--text-sm);
+  padding:      var(--space-1) var(--space-2) var(--space-1) 0;
+  outline:      none;
+  font-family:  var(--font-mono, monospace);
+}
+/* Hide number spinners for cleaner look */
+.bill-review__field-input::-webkit-inner-spin-button,
+.bill-review__field-input::-webkit-outer-spin-button { opacity: 0.3; }
+
+/* ── Add item button ── */
+.bill-review__add-btn {
+  background:    none;
+  border:        1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color:         var(--color-accent);
+  font-size:     var(--text-sm);
+  font-weight:   var(--weight-medium);
+  padding:       var(--space-3);
+  cursor:        pointer;
+  transition:    background 0.15s, border-color 0.15s;
+  text-align:    center;
+}
+.bill-review__add-btn:hover {
+  background:    color-mix(in srgb, var(--color-accent) 8%, transparent);
+  border-color:  var(--color-accent);
+}
+
+/* ── Summary section ── */
+.bill-review__summary {
+  background:    var(--color-bg-card);
+  border:        1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding:       var(--space-5);
+}
+.bill-review__summary-title {
+  font-size:   var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color:       var(--color-text-heading);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.bill-review__summary-grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   var(--space-3) var(--space-4);
+  align-items:           center;
+}
+.bill-review__summary-label {
+  font-size:   var(--text-sm);
+  color:       var(--color-text-muted);
+  font-weight: var(--weight-medium);
+}
+.bill-review__summary-label--total {
+  color:       var(--color-text-heading);
+  font-weight: var(--weight-bold);
+  font-size:   var(--text-base);
+}
+.bill-review__field-prefix--total {
+  font-weight: var(--weight-bold);
+  color:       var(--color-text-heading);
+}
+.bill-review__field-input--total {
+  font-weight: var(--weight-bold);
+  font-size:   var(--text-base);
+}
+
+/* ── Confidence ring ── */
+.conf-ring {
+  display:       inline-block;
+  width:         10px;
+  height:        10px;
+  border-radius: 50%;
+  flex-shrink:   0;
+  border:        2px solid transparent;
+}
+.conf-ring--high   { background: var(--color-success); border-color: var(--color-success); }
+.conf-ring--medium { background: var(--color-warning);  border-color: var(--color-warning); }
+.conf-ring--low    { background: var(--color-error);    border-color: var(--color-error); }
+
+/* ── Legend ── */
+.bill-review__legend {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-3);
+  flex-wrap:   wrap;
+  font-size:   var(--text-xs);
+  color:       var(--color-text-muted);
+  padding:     var(--space-2) 0;
+}
+.bill-review__legend .conf-ring {
+  width:  8px;
+  height: 8px;
+}
+
+/* ── Hint text ── */
+.bill-review__hint {
+  text-align:  center;
+  font-size:   var(--text-xs);
+  color:       var(--color-text-muted);
+  margin-top:  calc(var(--space-2) * -1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .bill-review__item-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bill-review__summary-grid {
+    grid-template-columns: 1fr;
+  }
+}

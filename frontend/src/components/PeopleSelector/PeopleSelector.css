@@ -1,0 +1,94 @@
+/* PeopleSelector styles */
+.people-selector {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-8);
+}
+
+/* ── Count stepper ───────────────────────────────────────────── */
+.people-selector__picker {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  gap:             var(--space-8);
+}
+
+.people-selector__stepper {
+  width:           52px;
+  height:          52px;
+  border-radius:   var(--radius-full);
+  background:      var(--color-bg-input);
+  border:          2px solid var(--color-border);
+  color:           var(--color-text-heading);
+  font-size:       1.5rem;
+  font-weight:     var(--weight-bold);
+  cursor:          pointer;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  transition:      background var(--transition-fast),
+                   border-color var(--transition-fast),
+                   transform var(--transition-fast);
+  line-height:     1;
+}
+.people-selector__stepper:hover:not(:disabled) {
+  background:   var(--color-accent-bg);
+  border-color: var(--color-accent);
+  color:        var(--color-accent);
+  transform:    scale(1.05);
+}
+.people-selector__stepper:disabled {
+  opacity: 0.3;
+  cursor:  not-allowed;
+}
+
+.people-selector__count {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            var(--space-1);
+  min-width:      80px;
+}
+
+.people-selector__count-number {
+  font-family: var(--font-display);
+  font-size:   3.5rem;
+  font-weight: var(--weight-extrabold);
+  color:       var(--color-accent);
+  line-height: 1;
+  transition:  transform 0.15s ease;
+}
+
+.people-selector__count-label {
+  font-size:   var(--text-sm);
+  color:       var(--color-text-muted);
+  font-weight: var(--weight-medium);
+}
+
+/* ── Name inputs ─────────────────────────────────────────────── */
+.people-selector__names {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3);
+}
+
+.people-selector__name-row {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-3);
+}
+
+.people-selector__avatar {
+  width:           40px;
+  height:          40px;
+  border-radius:   var(--radius-full);
+  background:      linear-gradient(135deg, var(--color-accent) 0%, var(--brand-700) 100%);
+  color:           #fff;
+  font-weight:     var(--weight-bold);
+  font-size:       var(--text-sm);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-shrink:     0;
+  box-shadow:      var(--shadow-sm);
+}
